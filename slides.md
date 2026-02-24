@@ -9,7 +9,7 @@ highlighter: shiki
 mdc: true
 ---
 
-# 「今週なに食べる？」を<br>AIで終わらせた話
+## 「今週なに食べる？」を<br>AIで終わらせた話
 
 「俺たちのAI活用LT」 / Tahara Seitaro
 
@@ -23,7 +23,7 @@ layout: section
 
 # pain
 
-## 日々の献立を考えるのが面倒
+日々の献立を考えるのが面倒
 
 <!--
 0:00-0:15
@@ -34,7 +34,7 @@ layout: section
 layout: default
 ---
 
-# 我が家の献立運用
+## 我が家の献立運用
 
 Discordで週2回Threadを立てる
 
@@ -62,7 +62,7 @@ layout: quote
 layout: default
 ---
 
-# 🤔 作りたいものをイメージする
+## 🤔 作りたいものをイメージする
 
 - Discord Botに「献立考えて」コマンドを送る
 - Botが数日分の献立を考えてくれる
@@ -78,12 +78,12 @@ layout: default
 
 ---
 
-# 🎤 ユーザーの声を聞く
+## 🎤 ユーザーの声を聞く
 
 <div class="grid grid-cols-2 gap-8 mt-8">
 <div>
 
-## ユーザー = 私 + 妻
+### ユーザー = 私 + 妻
 
 雑談を**ChatGPT文字起こし**
 
@@ -96,7 +96,7 @@ layout: default
 </div>
 <div>
 
-## ⚠️ 重要
+### ⚠️ 重要
 **いきなり作らない**
 
 思い込みで作ると、  
@@ -127,7 +127,7 @@ layout: default
 
 ---
 
-# 📋 AIと壁打ち
+## 📋 AIと壁打ち
 
 <div class="grid grid-cols-2 gap-8 mt-4">
 <div>
@@ -155,7 +155,7 @@ layout: default
 
 ---
 
-# 💻 いざ実装
+## 💻 いざ実装
 
 Markdownの仕様書をCodexに投げつけるだけ。
 
@@ -185,11 +185,11 @@ Markdownの仕様書をCodexに投げつけるだけ。
 layout: two-cols
 ---
 
-# ✨ 動いた！
+## ✨ 動いた！
 
 <div class="mt-8">
 
-## 💬 Discord操作
+### 💬 Discord操作
 
 ```
 /menu suggest
@@ -197,7 +197,7 @@ layout: two-cols
 
 ⬇️
 
-## 📋 献立提案
+### 📋 献立提案
 
 ```
 【1日目】
@@ -214,7 +214,7 @@ layout: two-cols
 
 <div class="mt-20">
 
-## 🛒 買い物リスト
+### 🛒 買い物リスト
 
 ```
 【野菜】
@@ -243,7 +243,7 @@ layout: two-cols
 layout: center
 ---
 
-# 学び
+## 学び
 
 	1.	AI活用で大事なのは、プロンプトより先に生活のルール化
 	2.	小さい不便ほどAI化の効果が大きい（毎日発生するから）

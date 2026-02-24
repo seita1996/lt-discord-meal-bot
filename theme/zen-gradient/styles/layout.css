@@ -26,6 +26,8 @@ body,
   box-sizing: border-box;
   padding: clamp(1.5rem, 4vw, 3.5rem);
   overflow: hidden;
+  font-size: clamp(1.15rem, 1.35vw, 1.5rem);
+  line-height: 1.55;
   color: var(--lt-text);
   background:
     radial-gradient(1000px 500px at 10% -10%, rgb(125 211 252 / 20%), transparent 60%),
@@ -45,7 +47,7 @@ body,
 .slidev-layout h2,
 .slidev-layout h3 {
   letter-spacing: 0.02em;
-  line-height: 1.2;
+  line-height: 1.15;
   font-weight: 800;
   color: transparent;
   background: linear-gradient(90deg, var(--lt-heading-start), var(--lt-heading-end));
@@ -53,9 +55,23 @@ body,
   background-clip: text;
 }
 
+.slidev-layout h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 1.08;
+}
+
+.slidev-layout h2 {
+  font-size: clamp(1.9rem, 4.6vw, 3.7rem);
+}
+
+.slidev-layout h3 {
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+}
+
 .slidev-layout p,
 .slidev-layout li,
 .slidev-layout blockquote {
+  font-size: 1.06em;
   color: var(--lt-text);
 }
 
@@ -89,4 +105,60 @@ body,
   border-left: 4px solid rgb(125 211 252 / 55%);
   background: rgb(15 23 42 / 35%);
   border-radius: 0.5rem;
+}
+
+.slidev-layout .lt-content {
+  position: relative;
+  z-index: 1;
+}
+
+.slidev-layout .lt-fractal {
+  position: absolute;
+  width: clamp(8rem, 18vw, 15rem);
+  aspect-ratio: 1;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  filter: drop-shadow(0 0 1.2rem rgb(14 165 233 / 30%));
+}
+
+.slidev-layout .lt-fractal::before,
+.slidev-layout .lt-fractal::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  clip-path: polygon(50% 0%, 87% 13%, 100% 50%, 87% 87%, 50% 100%, 13% 87%, 0% 50%, 13% 13%);
+}
+
+.slidev-layout .lt-fractal::before {
+  background:
+    repeating-conic-gradient(
+      from 0deg,
+      rgb(165 243 252 / 48%) 0deg 10deg,
+      rgb(14 165 233 / 0%) 10deg 20deg
+    ),
+    radial-gradient(circle, rgb(165 243 252 / 35%) 0 16%, rgb(14 165 233 / 0%) 16% 100%);
+}
+
+.slidev-layout .lt-fractal::after {
+  inset: 18%;
+  transform: rotate(22deg) scale(0.85);
+  background:
+    repeating-conic-gradient(
+      from 0deg,
+      rgb(224 242 254 / 70%) 0deg 12deg,
+      rgb(14 165 233 / 0%) 12deg 24deg
+    ),
+    radial-gradient(circle, rgb(224 242 254 / 42%) 0 20%, rgb(14 165 233 / 0%) 20% 100%);
+}
+
+.slidev-layout.section .lt-fractal {
+  top: clamp(1rem, 5vh, 2.5rem);
+  right: clamp(1rem, 4vw, 2.5rem);
+}
+
+.slidev-layout.quote .lt-fractal {
+  bottom: clamp(1rem, 5vh, 2.5rem);
+  right: clamp(1rem, 4vw, 2.5rem);
+  transform: rotate(180deg);
 }
