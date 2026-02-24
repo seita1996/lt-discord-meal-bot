@@ -1,0 +1,17 @@
+{
+  "name": "slidev-theme-zen-gradient",
+  "version": "0.0.1",
+  "private": true,
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "slidev": {
+    "colorSchema": "dark",
+    "defaults": {
+      "fonts": {
+        "sans": "Zen Maru Gothic",
+        "mono": "JetBrains Mono"
+      }
+    }
+  }
+}

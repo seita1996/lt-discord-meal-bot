@@ -1,5 +1,5 @@
 ---
-theme: shibainu
+theme: ./theme/zen-gradient
 title: 「今週なに食べる？」をAIで終わらせた話
 info: |
   「俺たちのAI活用LT」 / Tahara Seitaro
