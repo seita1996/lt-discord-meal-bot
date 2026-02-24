@@ -31,15 +31,18 @@ layout: section
 -->
 
 ---
-layout: default
+layout: two-cols
 ---
 
 ## 我が家の献立運用
 
 Discordで週2回Threadを立てる
 
-
 ![](./assets/meal-thread.jpg){width=250px lazy}
+
+::right::
+
+平日はコープ・休日はスーパーで買い出し
 
 <!--
 0:00-0:15
@@ -48,26 +51,20 @@ Discordで週2回Threadを立てる
 -->
 
 ---
-layout: quote
----
-
-# ( っ'-')╮ =͟͟͞͞📝ﾌﾞｫﾝ
-
-<!--
-0:00-0:15
-作る過程さえも
--->
-
----
 layout: default
+class: ideation
 ---
 
 ## 🤔 作りたいものをイメージする
 
+<v-clicks>
+
 - Discord Botに「献立考えて」コマンドを送る
 - Botが数日分の献立を考えてくれる
-- Discord Botに「献立から買い物リスト作って」コマンドを送る
+- Botに「献立から買い物リスト作って」コマンドを送る
 - Botがリストを作ってくれる・Discordから消し込みできる
+
+</v-clicks>
 
 <!--
 1:25-1:50
@@ -126,16 +123,19 @@ layout: default
 -->
 
 ---
+class: ai-dialogue
+---
 
-## 📋 AIと壁打ち
+### 📋 AIと壁打ち
 
-<div class="grid grid-cols-2 gap-8 mt-4">
-<div>
+<div class="ai-quote-grid mt-4">
 
-> Openrouter の無料APIを使い、discordの実用的なAIチャットボットを作ることはできる？
+<v-clicks>
+
+> OpenRouter の無料APIを使い、discordの実用的なAIチャットボットを作ることはできる？
 
 > 夫婦のdiscord スペースだけで使える献立botを作ろうと思う。
-> サーバーコストをかけたくない。cloudflare workersとかでホストできる？
+> サーバーコストをかけず、cloudflare workersでホストしたい。
 
 > スラッシュコマンドの設計をしたい。
 > 献立は献立用のフォーラムチャンネルに「2/1-2/4」など数日単位でスレッドを作り、以下のような形で管理している。
@@ -143,10 +143,12 @@ layout: default
 
 > 実装はCodexにさせる予定。仕様書のMarkdownを作成したいが、検討しておくべき事項は残っている？
 
-インタビューログはChatGPTのメモリに載っているので、要件を把握したうえで仕様書を書いてくれる
-
+</v-clicks>
 
 </div>
+
+<div class="mt-6">
+インタビューログはChatGPTのメモリに載っているので、要件を把握したうえで仕様書を書いてくれる
 </div>
 
 <!--
@@ -155,11 +157,8 @@ layout: default
 
 ---
 
-## 💻 いざ実装
+### 💻 いざ実装
 
-Markdownの仕様書をCodexに投げつけるだけ。
-
-ここが一番短いかも。
 
 構成は
 
@@ -179,6 +178,19 @@ Markdownの仕様書をCodexに投げつけるだけ。
 実装はDiscord Bot + Cloudflare Worker + D1のシンプル構成です。
 仕様のMarkdownをそのままAIコーディングに渡して、叩き台を作らせて、僕が運用に合わせて直す、を繰り返しました。
 “AIに丸投げ”というより、“雑に頼んでも壊れない設計にしておく”のがポイントでした。
+-->
+
+---
+layout: quote
+---
+
+# ( っ'-')╮ =͟͟͞͞📝ﾌﾞｫﾝ
+
+Hey AI, これ作って！
+
+<!--
+Markdownの仕様書をCodexに投げつけるだけ。
+実装が一番短かったかもしれません。
 -->
 
 ---
@@ -241,13 +253,14 @@ layout: two-cols
 
 ---
 layout: center
+class: learnings
 ---
 
 ## 学び
 
-	1.	AI活用で大事なのは、プロンプトより先に生活のルール化
-	2.	小さい不便ほどAI化の効果が大きい（毎日発生するから）
-	3.	“作る”だけでなく、家族に使われるUXが大事
+1. AI活用で大事なのは、プロンプトより先に生活のルール化
+2. 小さい不便ほどAI化の効果が大きい（毎日発生するから）
+3. “作る”だけでなく、家族に使われるUXが大事
 
 <!--
 4:20-4:50
