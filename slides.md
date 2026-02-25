@@ -11,6 +11,8 @@ mdc: true
 
 ## 「今週なに食べる？」を<br>AIで終わらせた話
 
+2026-02-27
+
 「俺たちのAI活用LT」 / Tahara Seitaro
 
 <!--
@@ -55,7 +57,7 @@ layout: default
 class: ideation
 ---
 
-## 🤔 作りたいものをイメージする
+## 作りたいものをイメージする
 
 <v-clicks>
 
@@ -75,14 +77,17 @@ class: ideation
 
 ---
 
-## 🎤 ユーザーの声を聞く
+## Userの声を聞く
 
-<div class="grid grid-cols-2 gap-8 mt-8">
+<div class="grid grid-cols-3 gap-6 mt-8">
+<v-clicks>
 <div>
 
-### ユーザー = 私 + 妻
+### User = 私 + 妻
 
-雑談を**ChatGPT文字起こし**
+雑談を
+
+**ChatGPTで文字起こし**
 
 ![](./assets/gpt-voice-pre.jpg){width=250px lazy}
 
@@ -93,19 +98,20 @@ class: ideation
 </div>
 <div>
 
-### ⚠️ 重要
-**いきなり作らない**
-
-思い込みで作ると、  
-誰も使わないものができる
-
-↓
-
-まず**困りごとを言語化**
+### まずは困りごとを言語化
 
 ![](./assets/gpt-voice-text.jpg){width=250px lazy}
 
 </div>
+<div>
+
+### いきなり作らない
+
+思い込みで作ると、  
+誰も使わないものができる
+
+</div>
+</v-clicks>
 </div>
 
 
@@ -126,7 +132,7 @@ class: ideation
 class: ai-dialogue
 ---
 
-### 📋 AIと壁打ち
+## AIと壁打ち
 
 <div class="ai-quote-grid mt-4">
 
@@ -137,8 +143,8 @@ class: ai-dialogue
 > 夫婦のdiscord スペースだけで使える献立botを作ろうと思う。
 > サーバーコストをかけず、cloudflare workersでホストしたい。
 
-> スラッシュコマンドの設計をしたい。
-> 献立は献立用のフォーラムチャンネルに「2/1-2/4」など数日単位でスレッドを作り、以下のような形で管理している。
+> Slash Commandの設計をしたい。
+> 献立は献立用のForumに「2/1-2/4」など数日単位でスレッドを作り、以下のような形で管理している。
 > ...
 
 > 実装はCodexにさせる予定。仕様書のMarkdownを作成したいが、検討しておくべき事項は残っている？
@@ -147,37 +153,37 @@ class: ai-dialogue
 
 </div>
 
-<div class="mt-6">
-インタビューログはChatGPTのメモリに載っているので、要件を把握したうえで仕様書を書いてくれる
-</div>
-
 <!--
 2:20-2:50
+インタビューログはChatGPTのメモリに載っているので、要件を把握したうえで仕様書を書いてくれる
 -->
 
 ---
+layout: two-cols
+---
 
-### 💻 いざ実装
-
+## いざ実装
 
 構成は
 
 - Discord Bot（UI）
 - Cloudflare Worker（Bot処理）
-- D1（保存）
+- D1（データ永続化）
+- OpenRouter（LLM）
 - GitHub Actions（デプロイ）
-- 実装はCodex（やAIコーディング支援）に仕様を投げて進めた
 
-役割分担は
+::right::
 
-- 人間：要件定義・ルール設計・最終判断
-- AI：叩き台実装・型の補完・反復修正・テスト雛形
+<div class="h-full grid place-content-center">
+
+![](./assets/codex-app.png){width=600px lazy}
+
+</div>
 
 <!--
 2:50-3:20
 実装はDiscord Bot + Cloudflare Worker + D1のシンプル構成です。
-仕様のMarkdownをそのままAIコーディングに渡して、叩き台を作らせて、僕が運用に合わせて直す、を繰り返しました。
-“AIに丸投げ”というより、“雑に頼んでも壊れない設計にしておく”のがポイントでした。
+仕様のMarkdownをそのままCodexに渡して書かせました。
 -->
 
 ---
@@ -194,76 +200,34 @@ Markdownの仕様書をCodexに投げつけるだけ。
 -->
 
 ---
-layout: two-cols
+layout: section
 ---
 
-## ✨ 動いた！
+## 完成！
 
-<div class="mt-8">
+<div class="h-4" />
 
-### 💬 Discord操作
-
-```
-/menu suggest
-```
-
-⬇️
-
-### 📋 献立提案
-
-```
-【1日目】
-主菜：豚の生姜焼き
-副菜：ほうれん草のおひたし
-汁物：豆腐とわかめの味噌汁
-
-【2日目】...
-```
-
-</div>
-
-::right::
-
-<div class="mt-20">
-
-### 🛒 買い物リスト
-
-```
-【野菜】
-- ほうれん草 1束
-- 玉ねぎ 2個
-- にんじん 1本
-
-【肉類】
-- 豚バラ肉 300g
-- 鶏もも肉 200g
-
-【調味料】
-- 生姜 1片
-```
-
-</div>
+<BotCrossfade />
 
 <!--
-3:50-4:20
-こんな感じで、Discord上で今週の献立と買い物リストまで出ます。
-しかも「水曜はもっとラクに」みたいな家庭都合の修正にも対応できます。
-これで夕方の意思決定コストがかなり減りました。
 -->
 
 ---
-layout: center
+layout: section
 class: learnings
 ---
 
 ## 学び
 
-1. AI活用で大事なのは、プロンプトより先に生活のルール化
-2. 小さい不便ほどAI化の効果が大きい（毎日発生するから）
-3. “作る”だけでなく、家族に使われるUXが大事
+1. 勝負どころは実装前（要件化）
+2. オリジナルの制約に価値が宿る
+3. 完成より定着（使われるUX）
 
 <!--
 4:20-4:50
+いきなりコードを書かせるより、家庭内の運用ルールと言語化を先にやるほうが成功率が上がる。
+月曜はコープ休み・水曜は15分以内、みたいな生活の制約を入れた瞬間に、ただのAIデモから実用品になる。
+動くBotはすぐ作れる。難しいのは、家族の導線に自然に乗せて定着させるUX設計。
 -->
 
 ---
