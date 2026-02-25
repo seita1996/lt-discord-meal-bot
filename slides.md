@@ -20,6 +20,30 @@ mdc: true
 -->
 
 ---
+layout: two-cols
+class: profile
+---
+
+## 自己紹介
+
+### Tahara Seitaro
+
+- Software Engineer
+- 普段はWebアプリケーション開発
+- 子育て奮闘中
+- 悩み「可処分時間が足りない」
+
+::right::
+
+![](./assets/github-qr.png){width=250px lazy}
+
+.
+
+<!--
+0:15-0:30
+-->
+
+---
 layout: section
 ---
 

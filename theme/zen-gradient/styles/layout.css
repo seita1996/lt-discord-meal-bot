@@ -273,6 +273,17 @@ body,
   font-size: 0.94em;
 }
 
+.slidev-layout.two-cols .col-left.profile .profile-qr {
+  position: absolute;
+  top: clamp(1.75rem, 4.2vh, 2.6rem);
+  right: clamp(1.6rem, 4vw, 3rem);
+  width: 150px;
+  border-radius: 0.5rem;
+  border: 1px solid rgb(255 255 255 / 38%);
+  box-shadow: 0 0.6rem 1.6rem rgb(2 6 23 / 28%);
+  z-index: 3;
+}
+
 .slidev-layout.ideation ul {
   margin-top: clamp(1.3rem, 2.6vh, 2.1rem);
   padding-left: 0;
@@ -347,6 +358,12 @@ body,
 }
 
 @media (max-width: 840px) {
+  .slidev-layout.two-cols .col-left.profile .profile-qr {
+    top: 1rem;
+    right: 1rem;
+    width: 108px;
+  }
+
   .slidev-layout.ideation ul {
     grid-template-columns: 1fr;
   }
