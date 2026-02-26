@@ -60,6 +60,7 @@ class: profile
 
 ---
 layout: section
+class: pain
 ---
 
 # pain
