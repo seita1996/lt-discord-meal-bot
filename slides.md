@@ -359,6 +359,7 @@ class: learnings
 
 ---
 layout: quote
+class: keep-building
 ---
 
 # Keep building.

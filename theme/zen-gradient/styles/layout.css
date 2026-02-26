@@ -453,6 +453,182 @@ body,
   }
 }
 
+/* Keep-building slide: subtle cyber ambiance */
+.slidev-layout.keep-building {
+  isolation: isolate;
+}
+
+.slidev-layout.keep-building .lt-content {
+  position: relative;
+  padding: clamp(0.8rem, 1.8vh, 1.4rem) clamp(0.4rem, 1vw, 0.8rem);
+  overflow: hidden;
+}
+
+.slidev-layout.keep-building .lt-content::before {
+  content: '';
+  position: absolute;
+  inset: -1rem;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.36;
+  background:
+    linear-gradient(115deg, rgb(125 211 252 / 12%) 0%, rgb(14 165 233 / 0%) 45%, rgb(125 211 252 / 10%) 100%),
+    repeating-linear-gradient(90deg, rgb(148 163 184 / 0%) 0 24px, rgb(125 211 252 / 12%) 24px 25px),
+    repeating-linear-gradient(180deg, rgb(148 163 184 / 0%) 0 24px, rgb(125 211 252 / 9%) 24px 25px);
+  mask-image: radial-gradient(85% 70% at 50% 58%, #000 0%, #000 58%, transparent 100%);
+  animation: keep-building-grid 14s ease-in-out infinite;
+}
+
+.slidev-layout.keep-building .lt-content::after {
+  content: '';
+  position: absolute;
+  inset: -15% -20%;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    180deg,
+    rgb(14 165 233 / 0%) 0%,
+    rgb(125 211 252 / 26%) 49%,
+    rgb(14 165 233 / 0%) 52%
+  );
+  transform: translateY(-130%);
+  animation: keep-building-scan 11s cubic-bezier(0.45, 0.02, 0.2, 1) infinite;
+}
+
+.slidev-layout.keep-building .lt-fractal {
+  opacity: 0.62;
+  filter: drop-shadow(0 0 1.35rem rgb(125 211 252 / 40%));
+  animation: keep-building-fractal 16s linear infinite;
+}
+
+.slidev-layout.keep-building h1 {
+  display: inline-block;
+  margin-bottom: clamp(0.45rem, 1.4vh, 0.95rem);
+  background-size: 220% 100%;
+  text-shadow: 0 0 0.95rem rgb(56 189 248 / 26%);
+  animation:
+    keep-building-title-glow 10s ease-in-out infinite,
+    keep-building-title-shift 18s linear infinite;
+}
+
+.slidev-layout.keep-building p {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.3rem;
+  letter-spacing: 0.01em;
+  color: rgb(191 219 254 / 94%);
+  animation: keep-building-subtitle 9s ease-in-out infinite;
+}
+
+.slidev-layout.keep-building p::after {
+  content: '';
+  display: block;
+  margin-top: 0.36rem;
+  height: 1px;
+  width: min(20rem, 48vw);
+  background: linear-gradient(90deg, rgb(125 211 252 / 0%), rgb(125 211 252 / 80%), rgb(125 211 252 / 0%));
+  animation: keep-building-underline 9s ease-in-out infinite;
+}
+
+@keyframes keep-building-grid {
+  0%,
+  100% {
+    opacity: 0.28;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: translate3d(0, -8px, 0) scale(1.02);
+  }
+}
+
+@keyframes keep-building-scan {
+  0%,
+  72%,
+  100% {
+    opacity: 0;
+    transform: translateY(-130%);
+  }
+  76% {
+    opacity: 0.22;
+  }
+  82% {
+    opacity: 0.22;
+    transform: translateY(135%);
+  }
+  84% {
+    opacity: 0;
+    transform: translateY(135%);
+  }
+}
+
+@keyframes keep-building-fractal {
+  0% {
+    transform: rotate(180deg) scale(1);
+  }
+  50% {
+    transform: rotate(198deg) scale(1.04);
+  }
+  100% {
+    transform: rotate(216deg) scale(1);
+  }
+}
+
+@keyframes keep-building-title-glow {
+  0%,
+  65%,
+  100% {
+    filter: none;
+    text-shadow: 0 0 0.95rem rgb(56 189 248 / 26%);
+  }
+  68% {
+    filter: brightness(1.12);
+    text-shadow: 0 0 1.2rem rgb(125 211 252 / 36%);
+  }
+  69% {
+    filter: brightness(0.98);
+  }
+  70% {
+    filter: brightness(1.08);
+  }
+  72% {
+    filter: none;
+  }
+}
+
+@keyframes keep-building-title-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 220% 50%;
+  }
+}
+
+@keyframes keep-building-subtitle {
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-1.5px);
+  }
+}
+
+@keyframes keep-building-underline {
+  0%,
+  100% {
+    opacity: 0.38;
+    transform: scaleX(0.92);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scaleX(1);
+  }
+}
+
 @keyframes ideation-cloud-float {
   0%,
   100% {
@@ -485,6 +661,14 @@ body,
     clip-path: polygon(38% 0, 62% 0, 62% 72%, 92% 72%, 50% 100%, 8% 72%, 38% 72%);
   }
 
+  .slidev-layout.keep-building h1 {
+    font-size: clamp(2.45rem, 11vw, 3.4rem);
+  }
+
+  .slidev-layout.keep-building p::after {
+    width: min(16rem, 70vw);
+  }
+
   .slidev-layout.ai-dialogue .ai-quote-grid {
     grid-template-columns: 1fr;
   }
@@ -493,7 +677,13 @@ body,
 @media (prefers-reduced-motion: reduce) {
   .slidev-layout.pain h1,
   .slidev-layout.pain p,
-  .slidev-layout.pain .lt-content::after {
+  .slidev-layout.pain .lt-content::after,
+  .slidev-layout.keep-building .lt-content::before,
+  .slidev-layout.keep-building .lt-content::after,
+  .slidev-layout.keep-building .lt-fractal,
+  .slidev-layout.keep-building h1,
+  .slidev-layout.keep-building p,
+  .slidev-layout.keep-building p::after {
     animation: none;
   }
 }
