@@ -1,11 +1,11 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# 2026/02/27俺たちのAI活用LT発表資料
 
-To start the slide show:
+## 起動方法
 
 - `pnpm install`
 - `pnpm dev`
 - visit <http://localhost:3030>
 
-Edit the [slides.md](./slides.md) to see the changes.
+## 発表資料
 
-Learn more about Slidev at the [documentation](https://sli.dev/).
+https://seita1996.github.io/lt-discord-meal-bot/
